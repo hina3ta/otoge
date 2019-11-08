@@ -62,11 +62,7 @@ public class PlaySceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Return)) {
-        //    SceneManager.LoadScene("ResultScene");
-        //}
-
-        // ノート移動処理
+        // ノーツ移動処理
         foreach (var notes in _notesDic.Values) {
             foreach (var note in notes) {
                 var transform1 = note.transform;
@@ -127,7 +123,7 @@ public class PlaySceneManager : MonoBehaviour
         _score = 0;
         _combo = 0;
 
-        // ノート生成
+        // ノーツ生成
         foreach (var master in MusicMaster) {
             var obj = Instantiate(notesPrefab, transform);
             var note = obj.GetComponent<Notes>();
